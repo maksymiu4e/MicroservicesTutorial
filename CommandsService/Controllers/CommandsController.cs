@@ -9,12 +9,12 @@ namespace CommandsService.Controllers;
 
 [Route("api/c/platforms/{platformId}/[controller]")]
 [ApiController]
-public class CommandsControllerc : ControllerBase
+public class CommandsController : ControllerBase
 {
     private readonly ICommandRepo _repo;
     private readonly IMapper _mapper;
 
-    public CommandsControllerc(ICommandRepo repo, IMapper mapper)
+    public CommandsController(ICommandRepo repo, IMapper mapper)
     {
         _repo = repo;
         _mapper = mapper;
@@ -73,6 +73,6 @@ public class CommandsControllerc : ControllerBase
         var commandReadDto = _mapper.Map<CommandReadDto>(command);
 
         return CreatedAtRoute(nameof(GetCommandForPlatform),
-            new { platformId = platformId, command = commandReadDto.Id }, commandReadDto);
+            new { platformId = platformId, commandId = commandReadDto.Id }, commandReadDto);
     }
 }

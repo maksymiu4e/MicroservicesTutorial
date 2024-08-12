@@ -38,7 +38,7 @@ public class MessageBusClient : IMessageBusClient
 
     private void RabbitMQ_ConnectionShutdown(object sender, ShutdownEventArgs e)
     {
-        Console.WriteLine("RabbitMQ connection shutdown");
+        Console.WriteLine("--->. RabbitMQ connection shutdown (platform service)");
     }
 
     public void PublishNewPlatform(PlatformPublishedDto platformPublishedDto)
