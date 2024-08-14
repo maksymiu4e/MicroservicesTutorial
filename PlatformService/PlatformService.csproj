@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.65.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
@@ -23,6 +24,14 @@
     </PackageReference>
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Protobuf Include="Protos\platforms.proto" GrpcServices="server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Protos\" />
   </ItemGroup>
 
 </Project>
